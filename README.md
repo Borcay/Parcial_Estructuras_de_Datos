@@ -3,6 +3,7 @@
   Santiago Hernandez Diaz 20252578001
   Profesor: Luis Felipe Wanumen 
 
+LINK YOUTUBE: https://youtu.be/-BjJ_oFNrq4
 
 ARCHIVOS DEL PROYECTO:
   src/avltree/AVLTreeApp.java   → Punto de entrada (main)
