@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+*** GENERATED FROM project.xml - DO NOT EDIT  ***
+***         EDIT ../build.xml INSTEAD         ***
+-->
+<project name="AVLTreeVisualizador-impl" basedir=".." xmlns:j2seproject1="http://www.netbeans.org/ns/j2se-project/1" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxrpc="http://www.netbeans.org/ns/jax-rpc">
+
+    <property file="nbproject/private/private.properties"/>
+    <!-- <property file="${user.home}/.netbeans/etc/netbeans.conf" prefix="nb."/> -->
+    <property file="nbproject/project.properties"/>
+
+    <condition property="platform.java" value="${platforms.${platform.active}.home}/bin/java">
+        <isset property="platforms.${platform.active}.home"/>
+    </condition>
+    <property name="platform.java" value="${java.home}/bin/java"/>
+
+    <!-- Directories -->
+    <property name="build.dir" value="build"/>
+    <property name="build.classes.dir" value="${build.dir}/classes"/>
+    <property name="dist.dir" value="dist"/>
+    <property name="dist.jar" value="${dist.dir}/AVLTreeVisualizador.jar"/>
+    <property name="src.dir" value="src"/>
+    <property name="test.src.dir" value="test"/>
+    <property name="source.encoding" value="UTF-8"/>
+    <property name="javac.source" value="11"/>
+    <property name="javac.target" value="11"/>
+    <property name="main.class" value="avltree.AVLTreeApp"/>
+    <property name="jar.compress" value="false"/>
+    <property name="meta.inf.manifest.file" value="manifest.mf"/>
+
+    <!-- Init -->
+    <target name="-pre-init"/>
+    <target name="-init-private"/>
+    <target name="-init-user"/>
+    <target name="-init-project"/>
+    <target name="-do-init">
+        <property name="run.jvmargs" value=""/>
+        <property name="javac.classpath" value=""/>
+    </target>
+    <target name="-post-init"/>
+
+    <target name="init" depends="-pre-init,-init-private,-init-user,-init-project,-do-init,-post-init"/>
+
+    <!-- Clean -->
+    <target name="-pre-clean"/>
+    <target name="-do-clean">
+        <delete dir="${build.dir}"/>
+        <delete dir="${dist.dir}"/>
+    </target>
+    <target name="-post-clean"/>
+    <target name="clean" depends="init,-pre-clean,-do-clean,-post-clean" description="Clean build products."/>
+
+    <!-- Compile -->
+    <target name="-pre-compile"/>
+    <target name="-do-compile" depends="init">
+        <mkdir dir="${build.classes.dir}"/>
+        <javac srcdir="${src.dir}"
+               destdir="${build.classes.dir}"
+               classpath="${javac.classpath}"
+               source="${javac.source}"
+               target="${javac.target}"
+               encoding="${source.encoding}"
+               includeantruntime="false"
+               debug="true">
+        </javac>
+    </target>
+    <target name="-post-compile"/>
+    <target name="compile" depends="init,-pre-compile,-do-compile,-post-compile" description="Compile project sources."/>
+
+    <!-- JAR -->
+    <target name="-pre-jar"/>
+    <target name="-do-jar-with-manifest" depends="compile">
+        <mkdir dir="${dist.dir}"/>
+        <jar destfile="${dist.jar}" compress="${jar.compress}">
+            <fileset dir="${build.classes.dir}"/>
+            <manifest>
+                <attribute name="Main-Class" value="${main.class}"/>
+                <attribute name="Class-Path" value=""/>
+            </manifest>
+        </jar>
+    </target>
+    <target name="-post-jar"/>
+    <target name="jar" depends="init,compile,-pre-jar,-do-jar-with-manifest,-post-jar" description="Build JAR."/>
+
+    <!-- Run -->
+    <target name="-pre-run-main"/>
+    <target name="-do-run">
+        <java fork="true" classname="${main.class}">
+            <classpath>
+                <pathelement path="${build.classes.dir}"/>
+                <pathelement path="${javac.classpath}"/>
+            </classpath>
+            <jvmarg line="${run.jvmargs}"/>
+        </java>
+    </target>
+    <target name="-post-run-main"/>
+    <target name="run" depends="init,compile,-pre-run-main,-do-run,-post-run-main" description="Run project."/>
+
+    <!-- Clean and Build (the one NetBeans calls) -->
+    <target name="clean-and-build" depends="clean,jar" description="Clean and rebuild project."/>
+
+    <!-- Default target -->
+    <target name="default" depends="jar" description="Build whole project."/>
+
+    <!-- NetBeans expects this target for "Build Project" button -->
+    <target name="build" depends="jar" description="Build project."/>
+
+</project>
