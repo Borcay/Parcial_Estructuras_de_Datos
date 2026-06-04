@@ -13,13 +13,8 @@ ARCHIVOS DEL PROYECTO:
   src/avltree/TreePanel.java    → Panel de dibujo del árbol
   src/avltree/ExportUtils.java  → Exportar PNG / HTML-PDF / Imprimir
 
-CÓMO ABRIR EN NETBEANS:
-  1. File → Open Project → seleccionar la carpeta AVLTree
-  2. NetBeans detectará el build.xml automáticamente
-  3. Clic derecho en proyecto → Run (F6)
-
 EJECUTAR EL JAR DIRECTAMENTE:
-  java -jar jar/AVLTreeVisualizador.jar
+  carpeta dist -> AVLTreeVisualizador.jar
 
 FUNCIONALIDADES:
   ✔ Inserción, eliminación y búsqueda animada
